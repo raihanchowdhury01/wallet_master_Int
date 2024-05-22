@@ -1,0 +1,155 @@
+.themeColor{
+    background-color: #353434;
+}
+
+.active{
+    display: none !important;
+}
+.cActive{
+    display: block !important;
+}
+
+/* menubar design */
+.activeMenu{
+    display: block !important;
+    animation: drop 0.5s ease-in-out forwards;
+    transform-origin: top center;
+    z-index: 999;
+}
+
+@keyframes drop {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+
+
+/* option section */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #2b2e2e;
+    cursor: pointer;
+    pointer-events: none;
+    /* transition: .25s all ease; */
+}
+
+.select:hover::after {
+    color: #23b499;
+}
+
+
+
+/* tab with modal  input*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    appearance: textfield;
+}
+
+/* tabs css */
+.tabs__radio:checked+.tabs__label {
+    color: #424d5b;
+    background-color: rgb(255, 255, 255);
+}
+
+.tabs__radio:checked+.tabs__label+.tabs__content {
+    display: initial;
+}
+
+
+/* modal section*/
+
+#modal-button:checked~#default-modal {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+
+/* records with modal section design */
+#open_modal_btn:hover span{
+    display: none;
+}
+
+/* cash flow chart design start from here*/
+
+
+@keyframes increase {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 75%; /* Change this value to control the final height */
+    }
+}
+
+.income-bar {
+    animation: increase 1s ease-out forwards;
+}
+
+
+@keyframes decrease {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 5%; /* Change this value to control the final height */
+    }
+}
+
+.expense-bar {
+    animation: decrease 1s ease-out forwards;
+}
+/* cash flow chart design end from here*/
+
+/* pie chart activities start from here */
+.pie-chart {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(
+        red 0% 20%, 
+        blue 0% 40%, 
+        green 0% 60%, 
+        orange 0% 80%, 
+        purple 0% 100%
+    );
+}
+.pie-chart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: white;
+}
+.label {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+/* pie chart activities end from here */
