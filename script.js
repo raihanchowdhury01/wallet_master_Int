@@ -39,7 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
         chart: {
             type: 'bar',
             height: 250,
-            // width: 300
+            toolbar: {
+                show: false
+            },
+            width: 350,
         },
         plotOptions: {
             bar: {
@@ -63,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart.render();
 });
 
+
 // dashboard chart section end from here
 
 // balance trend chart start from here
@@ -76,7 +80,9 @@ document.addEventListener('DOMContentLoaded', function () {
         chart: {
             type: 'line',
             height: 250,
-            // width: 300
+            toolbar: {
+                show: false
+            }
         },
         stroke: {
             curve: 'smooth',
