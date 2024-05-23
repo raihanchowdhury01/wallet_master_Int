@@ -120,36 +120,11 @@ input[type=number] {
 /* cash flow chart design end from here*/
 
 /* pie chart activities start from here */
-.pie-chart {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: relative;
-    background: conic-gradient(
-        red 0% 20%, 
-        blue 0% 40%, 
-        green 0% 60%, 
-        orange 0% 80%, 
-        purple 0% 100%
-    );
-}
-.pie-chart::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: white;
-}
-.label {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    font-weight: bold;
-}
+#pie_chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    width: 100%;   
+  }
 /* pie chart activities end from here */
