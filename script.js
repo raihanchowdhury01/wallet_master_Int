@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
             toolbar: {
                 show: false
             },
-            width: 350,
         },
         plotOptions: {
             bar: {
