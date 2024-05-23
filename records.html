@@ -136,7 +136,427 @@
 
                 <!-- add option -->
                 <div class="w-[85%] h-10 flex items-center overflow-hidden mt-1 justify-center mx-auto">
-                    <label for="modal-button" class="py-2 px-16 rounded-full bg-[#00aa70] text-white font-[400] text-sm cursor-pointer"> &plus; Add </label>
+                    <label for="modal-button" class="py-2 px-16 rounded-full bg-[#00aa70] text-white font-[400] text-sm cursor-pointer" id="open_modal_btn"> &plus; Add </label>
+                <div>
+                    <!-- modal section design start -->
+                    <div id="modal-wrapper" class="fixed z-50 inset-0 hidden">
+                        <div class="flex justify-center bg-[#2d2d2d31] w-full p-3 pb-5">
+                            <div class="w-[80%] h-[95vh] overflow-y-auto rounded">
+                                <!-- start header -->
+                                <div class="flex justify-between items-center w-full bg-[#fbfbfb] rounded-t p-3">
+                                    <div class=" sm:flex items-center">
+                                        <span class="uppercase text-xl font-[350]">add record</span>
+                                        <div
+                                            class="flex justify-between items-center p-3 w-48 h-10 border border-[#b8b8b8da] sm:ml-5 rounded text-[#b8b8b8da] select-none">
+                                            <span class="text-sm cursor-default">No saved templates</span>
+                                            <span><i class="fa-solid fa-caret-down text-[11px]"></i></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        
+                                        <label for="modal-close-button" class="text-lg cursor-pointer mr-2" id="modal-close-button"><i class="fa-solid fa-xmark"></i></label>
+                                    </div>
+                                </div>
+
+                                <!-- start body section -->
+                                <div class="grid grid-cols-3">
+                                    <div class="col-span-2">
+                                        <div class="bg-[#6a1b9a] p-3 pb-8 mx-auto">
+                                            <!-- new tabs in poup -->
+                                            <div class="flex max-w-[100%] flex-wrap mx-auto">
+                                                <!-- first tabs -->
+                                                <input type="radio" class="tabs__radio hidden" name="tabs-example"
+                                                    id="tab1" checked>
+                                                <label for="tab1"
+                                                    class="text-[#fff] tabs__label py-1.5 text-sm px-8 cursor-pointer border border-[#fff] rounded-s">Expense</label>
+                                                <div class="tabs__content hidden order-1 w-full">
+                                                    <div class="bg-[#6a1b9a] p-3 pb-8">
+                                                        <div class="mx-auto w-[70%]">
+                                                            <label for="down"
+                                                                class="text-[#f9f5fb] text-sm">Accounts</label>
+
+                                                            <div
+                                                                class="flex justify-center relative w-[100%] h-50px overflow-hidden cursor-pointer select-none">
+                                                                <select
+                                                                    class="bg-white w-full outline-none text-[#3e4b5e] border-none!important py-2 px-4 appearance-none rounded">
+                                                                    <option value=""
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &#129689;
+                                                                        Cash</option>
+                                                                    <option value="Cash"
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &#129689; Cash</option>
+                                                                    <option value="addAccounts"
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &plus;
+                                                                        Add Accounts</option>
+
+                                                                </select>
+                                                                <div
+                                                                    class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">
+                                                                    <i class="fa-solid fa-caret-down m-auto"></i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="sm:flex justify-between">
+                                                                <div>
+                                                                    <label class="text-[#f9f5fb] text-sm"
+                                                                        for="num">Amount</label>
+                                                                    <div
+                                                                        class="w-40 h-10 flex items-center rounded overflow-hidden mt-1">
+                                                                        <span
+                                                                            class="py-[100%] px-4 bg-white rounded-s cursor-pointer text-[#3e4b5e]">&ndash;</span>
+                                                                        <input type="number"
+                                                                            class="h-full w-full rounded-e text-right p-1 outline-none"
+                                                                            placeholder="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="text-[#f9f5fb] text-sm"
+                                                                        for="num">Currency</label>
+
+                                                                    <div
+                                                                        class="flex justify-center relative w-24 h-10 overflow-hidden cursor-pointer select-none mt-1">
+                                                                        <select
+                                                                            class="bg-white w-full outline-none text-[#3e4b5e] border-none!important px-4 appearance-none rounded uppercase text-sm">
+                                                                            <option value=""
+                                                                                class="bg-white outline-none font-[500] py-4">
+
+                                                                                bdt</option>
+                                                                        </select>
+                                                                        <div
+                                                                            class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">
+                                                                            <i
+                                                                                class="fa-solid fa-caret-down m-auto"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- second tabs -->
+                                                <input type="radio" class="tabs__radio hidden" name="tabs-example"
+                                                    id="tab2">
+                                                <label for="tab2"
+                                                    class="text-[#fff] tabs__label py-1.5 text-sm px-8 cursor-pointer border border-[#fff]">Income</label>
+                                                <div class="tabs__content hidden order-1 w-full">
+                                                    <div class="bg-[#6a1b9a] p-3 pb-8">
+                                                        <div class="mx-auto w-[70%]">
+                                                            <label for="down"
+                                                                class="text-[#f9f5fb] text-sm">Accounts</label>
+
+                                                            <div
+                                                                class="flex justify-center relative w-[100%] h-50px overflow-hidden cursor-pointer select-none">
+                                                                <select
+                                                                    class="bg-white w-full outline-none text-[#3e4b5e] border-none!important py-2 px-4 appearance-none rounded">
+                                                                    <option value=""
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &#129689;
+                                                                        Cash</option>
+                                                                    <option value="Cash"
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &#129689; Cash</option>
+                                                                    <option value="addAccounts"
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &plus;
+                                                                        Add Accounts</option>
+
+                                                                </select>
+                                                                <div
+                                                                    class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">
+                                                                    <i class="fa-solid fa-caret-down m-auto"></i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="sm:flex justify-between">
+                                                                <div>
+                                                                    <label class="text-[#f9f5fb] text-sm"
+                                                                        for="num">Amount</label>
+                                                                    <div
+                                                                        class="w-40 h-10 flex items-center rounded overflow-hidden mt-1">
+                                                                        <span
+                                                                            class="py-[100%] px-4 bg-white rounded-s cursor-pointer text-[#3e4b5e]">&plus;</span>
+                                                                        <input type="number"
+                                                                            class="h-full w-full rounded-e text-right p-1 outline-none"
+                                                                            placeholder="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="text-[#f9f5fb] text-sm"
+                                                                        for="num">Currency</label>
+
+                                                                    <div
+                                                                        class="flex justify-center relative w-24 h-10 overflow-hidden cursor-pointer select-none mt-1">
+                                                                        <select
+                                                                            class="bg-white w-full outline-none text-[#3e4b5e]  px-4 appearance-none rounded uppercase text-sm">
+                                                                            <option value="bdt">
+
+                                                                                bdt</option>
+                                                                        </select>
+                                                                        <div
+                                                                            class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">
+                                                                            <i
+                                                                                class="fa-solid fa-caret-down m-auto"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- third tabs -->
+                                                <input type="radio" class="tabs__radio hidden" name="tabs-example"
+                                                    id="tab3">
+                                                <label for="tab3"
+                                                    class="text-[#fff] tabs__label py-1.5 text-sm px-8 cursor-pointer border border-[#fff] rounded-e">Transfer</label>
+                                                <div class="tabs__content hidden order-1 w-full">
+
+                                                    <div
+                                                        class="bg-[#6a1b9a] p-3 pb-8 lg:flex space-y-4 lg:space-y-0 lg:space-x-4">
+                                                        <div class="mx-auto w-full">
+                                                            <label for="down"
+                                                                class="text-[#f9f5fb] text-sm">Accounts</label>
+                                                            <div
+                                                                class="flex justify-center relative w-[100%] h-50px overflow-hidden cursor-pointer select-none">
+                                                                <select
+                                                                    class="bg-white w-full outline-none text-[#3e4b5e] border-none!important py-2 px-4 appearance-none rounded">
+                                                                    <option value=""
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &#129689;
+                                                                        Cash</option>
+                                                                    <option value="Cash"
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &#x1f45b; Out of Wallet</option>
+                                                                    <option value="addAccounts"
+                                                                        class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &plus;
+                                                                        Add Accounts</option>
+
+                                                                </select>
+                                                                <div
+                                                                    class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">
+                                                                    <i class="fa-solid fa-caret-down m-auto"></i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="xl:flex justify-between">
+                                                                <div>
+                                                                    <label class="text-[#f9f5fb] text-sm" for="num">Amount</label>
+                                                                    <div class="w-40 h-10 flex items-center rounded overflow-hidden mt-1">
+                                                                        <span class="py-[100%] px-4 bg-white rounded-s cursor-pointer text-[#3e4b5e]">&plus;</span>
+                                                                        <input type="number" class="h-full w-full rounded-e text-right p-1 outline-none" placeholder="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="text-[#f9f5fb] text-sm" for="num">Currency</label>
+                                                                    <div class="flex justify-center relative w-24 h-10 overflow-hidden cursor-pointer select-none mt-1">
+                                                                        <select class="w-full outline-none px-4 appearance-none rounded uppercase text-sm">
+                                                                            <option value="bdt">
+                                                                                bdt</option>
+                                                                        </select>
+                                                                        <div class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none"> <i class="fa-solid fa-caret-down m-auto"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mx-auto w-full">
+                                                            <label for="down" class="text-[#f9f5fb] text-sm">Accounts</label>
+                                                            <div class="flex justify-center relative w-[100%] h-50px overflow-hidden cursor-pointer select-none">
+                                                                <select class="bg-white w-full outline-none text-[#3e4b5e] border-none!important py-2 px-4 appearance-none rounded">
+                                                                    <option value="" class="bg-white hover:bg-indigo-800 text-gray-800 outline-none ">
+                                                                        &#x1f45b;
+                                                                        Out of Wallet </option>
+
+                                                                    <option value="addAccounts" class="bg-white hover:bg-indigo-800 text-gray-800 outline-none "> &plus; Add Accounts</option>
+                                                                </select>
+                                                                <div class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none"> <i class="fa-solid fa-caret-down m-auto"></i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="xl:flex justify-between">
+                                                                <div>
+                                                                    <label class="text-[#f9f5fb] text-sm" for="num">Amount</label>
+                                                                    <div class="w-40 h-10 flex items-center rounded overflow-hidden mt-1">
+                                                                        <span class="py-[100%] px-4 bg-white rounded-s cursor-pointer text-[#3e4b5e]">&plus;</span>
+                                                                        <input type="number" class="h-full w-full rounded-e text-right p-1 outline-none" placeholder="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <label class="text-[#f9f5fb] text-sm" for="num">Currency</label>
+                                                                    <div class="flex justify-center relative w-24 h-10 overflow-hidden cursor-pointer select-none mt-1">
+                                                                        <select class="bg-white w-full outline-none text-[#3e4b5e] px-4 appearance-none rounded uppercase text-sm">
+                                                                            <option value="bdt">
+
+                                                                                bdt</option>
+                                                                        </select>
+                                                                        <div class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none"> <i class="fa-solid fa-caret-down m-auto"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </div> 
+                                        </div>
+
+
+                                        <!-- start from bdt -->
+                                        <div class="py-5 px-14 bg-white rounded-es">
+                                            <div class="mb-10">
+                                                <div class="w-full lg:flex justify-between">
+                                                    <div class="w-full">
+                                                        <span class="text-[#a29da4] text-sm">Category</span>
+
+                                                        <div class="flex justify-center items-center bg-white border border-[#717171] relative w-[90%] h-10 overflow-hidden cursor-pointer mt-2 rounded">
+                                                            <select class=" w-full outline-none text-[#5a697e]  py-2 px-4 appearance-none">
+                                                                <option value="" class="text-[#5a697e] hover:bg-gray-600 toutline-none ">
+                                                                    Choose
+                                                                </option>
+                                                                <option value="Shoping" class="text-[#5a697e] hover:bg-indigo-800 outline-none ">
+                                                                    Shoping
+                                                                </option>
+                                                                <option value="Housing" class="text-[#5a697e] hover:bg-indigo-800 outline-none ">
+                                                                    Housing
+                                                                </option>
+                                                                <option value="Food" class="text-[#5a697e] hover:bg-indigo-800 outline-none ">
+                                                                    Food & Drinks
+                                                                </option>
+                                                                <option value="Vehicle" class="text-[#5a697e] hover:bg-indigo-800 outline-none ">
+                                                                    Vehicle
+                                                                </option>
+                                                            </select>
+                                                            <div class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">
+                                                                <i class="fa-solid fa-caret-down m-auto"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full"> <span class="text-[#a29da4] text-sm">Labels</span>
+                                                        <div class="flex justify-center items-center bg-white border border-[#717171] relative w-[90%] h-10 overflow-hidden cursor-pointer mt-2 rounded">
+                                                            <select class=" w-full outline-none text-[#5a697e]  py-2 px-4 appearance-none">
+                                                                <option value="" class="text-[#5a697e] hover:bg-gray-600">
+                                                                    Choose
+                                                                </option>
+                                                                <option value="Not-found" class="text-[#5a697e]">
+                                                                    Not found
+                                                                </option>
+                                                            </select>
+                                                            <div class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">  <i class="fa-solid fa-caret-down m-auto"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-full lg:flex justify-between mt-5">
+                                                    <div class="w-full">
+                                                        <span class="text-[#a29da4] text-sm">Date</span>
+                                                        <div class="flex text-[#5a697e] justify-center items-center mt-2 px-3 h-10 w-[90%] border border-[#5a697e] rounded">
+                                                            <span class="capitalize">feb 14, 2024</span> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full">
+                                                        <span class="text-[#a29da4] text-sm">Time</span>
+                                                        <div class="flex text-[#5a697e] justify-center items-center mt-2 px-3 h-10 w-[90%] border border-[#5a697e] rounded">
+                                                            <span class="uppercase">4:45 pm</span>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                            <!-- start button -->
+                                            <div class="w-full text-center">
+                                                <div class="w-[60%] mb-2 bg-[#00aa70] hover:bg-[#2c7f63] h-10 text-[#dfdfdf] rounded-full flex justify-center items-center mx-auto">
+                                                    Add record
+                                                </div>
+                                                <a class="text-sm leading-3 underline text-[#027bff]" href="#">Add and
+                                                    create another</a>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                    <!-- start sid bar from -->
+                                    <div class="col-span-1 bg-[#eff0f2]  rounded-ee">
+                                        <!-- start sid from -->
+                                        <div class="py-10 px-5">
+                                            <div class="mb-3">
+                                                <label class="text-[#a29da4] text-sm" for="ass">Payee</label>
+                                                <input class="mt-1 w-full py-3 border border-[#9d9d9d] rounded outline-none" type="text">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="text-[#a29da4] text-sm" for="ass">Payee</label>
+                                                <textarea class="mt-1 w-full py-3 border border-[#9d9d9d] rounded outline-none" cols="4" rows="2"></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="text-[#a29da4] text-sm" for="ass">Payment type</label>
+
+                                                <div class="flex justify-center items-center bg-white relative w-full h-10  overflow-hidden cursor-pointer mt-1 rounded">
+                                                    <select class=" w-full outline-none text-[#4a596f]  py-2 px-4 appearance-none text-sm">
+                                                        <option value="" class="text-[#4a596f] hover:bg-gray-600">
+                                                            Cash
+                                                        </option>
+                                                        <option value="Debit" class="text-[#5a697e]">
+                                                            Debit card
+                                                        </option>
+                                                        <option value="Credit" class="text-[#5a697e]">
+                                                            Credit card
+                                                        </option>
+                                                        <option value="Transfer" class="text-[#5a697e]">
+                                                            Transfer
+                                                        </option>
+                                                        <option value="Mobile" class="text-[#5a697e]">
+                                                            Mobile payment
+                                                        </option>
+                                                    </select>
+                                                    <div class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">
+                                                        <i class="fa-solid fa-caret-down m-auto"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="text-[#a29da4] text-sm" for="ass">Payment status</label>
+
+                                                <div class="flex justify-center items-center bg-white relative w-full h-10 overflow-hidden cursor-pointer mt-1 rounded">
+                                                    <select class=" w-full outline-none text-[#5a697e]  py-2 px-4 appearance-none text-sm">
+                                                        <option value="">
+                                                            Cleared
+                                                        </option>
+                                                        <option value="Reconciled">
+                                                            Reconciled
+                                                        </option>
+                                                        <option value="Cleared">
+                                                            Cleared
+                                                        </option>
+                                                        <option value="Uncleared">
+                                                            Uncleared
+                                                        </option>
+                                                    </select>
+                                                    <div class="flex absolute w-10 h-full top-0 right-0 text-slate-700 text-sm pointer-events-none">
+                                                        <i class="fa-solid fa-caret-down m-auto"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="text-[#a29da4] text-sm" for="ass">Place</label>
+                                                <div class="h-10 flex items-center rounded overflow-hidden mt-1">
+                                                    <input type="text" class="h-full w-full rounded-e p-2 text-sm outline-none" placeholder="Name or address">
+                                                    <span class="py-[100%] px-4 bg-white rounded-s cursor-pointer text-[#3e4b5e]"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal section design end --> 
+                </div>
                 </div>
                 
                 <!-- search option -->
