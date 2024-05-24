@@ -22,7 +22,7 @@ const openBtn = document.getElementById("open_modal_btn");
 openBtn.addEventListener("click", () => {
     document.getElementById("modal-wrapper").classList.remove("hidden");
 });
-document.getElementById("modal-close-button").addEventListener("click", () => {
+document.getElementById("close-modal-btn").addEventListener("click", () => {
     document.getElementById("modal-wrapper").classList.add("hidden");
 });
 // modal activities end from here
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    var chart = new ApexCharts(document.querySelector("#chart_bar"), options);
+    var chart = new ApexCharts(document.getElementById("chart_bar"), options);
     chart.render();
 });
 
