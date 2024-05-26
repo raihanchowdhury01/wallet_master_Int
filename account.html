@@ -141,10 +141,17 @@
                         <!-- shorted by drop down list design start from here -->
                         <div class="mt-10">
                             <span class="text-sm font-[450] p-5 text-[#354052]">Short by</span>
-                            <div class="flex justify-between items-center p-3 w-[85%] h-10 border border-[#b8b8b8da] rounded text-[#b8b8b8da] select-none mt-2 mx-auto bg-white">
-                                <span class="text-sm cursor-default">default</span>
+                            <!-- default select text section design start from here -->
+                            <div class="flex justify-between items-center p-3 w-[85%] h-10 border border-[#b8b8b8da] rounded text-[#b8b8b8da] mt-2 mx-auto bg-white">
+                                <select name="default" id="" class="w-full appearance-none">
+                                    <option value="default">default</option>
+                                    <option value="item1" class="text-dark">Item 1</option>
+                                    <option value="item2" class="text-dark">Item 2</option>
+                                    <option value="item3" class="text-dark">Item 3</option>
+                                </select>
                                 <span><i class="fa-solid fa-caret-down text-[11px]"></i></span>
                             </div>
+                            <!-- select text section design end from here -->
                         </div>
                         <!-- shorted by drop down list design start from here -->
                     </div>
@@ -155,12 +162,22 @@
                 <!-- cash table section design start from here -->
                 <div id="card" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
                     <!-- cash card section design start from here -->
-                    <div class="text-center shadow p-5 space-y-5">
-                        <i class="fa-solid fa-coins ring-1 p-3 rounded-full text-3xl"></i>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-2xl">Cash</p>
-                            <p>BDT 15,000.00</p>
+                    <div class="text-center shadow pt-5 pb-2 space-y-5">
+                        <!-- cash and amount section design start from here -->
+                        <div class="px-5">
+                            <i class="fa-solid fa-coins ring-1 p-3 rounded-full text-3xl"></i>
+                            <div class="space-y-2">
+                                <p class="font-semibold text-2xl">Cash</p>
+                                <p>BDT 15,000.00</p>
+                            </div>
                         </div>
+                        <!-- cash and amount section design end from here -->
+                        <!-- card time section design start from here -->
+                        <div class="flex justify-between items-center px-1 space-x-3">
+                            <input type="date" name="date" id="" class="border">
+                            <input type="time" name="time" id="" class="border">
+                        </div>
+                        <!-- card time section design end from here -->
                     </div>
                     <!-- cash card section design start from here -->
                 </div>
