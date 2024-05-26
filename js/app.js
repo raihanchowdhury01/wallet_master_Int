@@ -17,7 +17,7 @@ crosse.addEventListener("click", () => {
 })
 
 
-// modal activities start from here
+//Records modal activities start from here
 const openBtn = document.getElementById("open_modal_btn");
 openBtn.addEventListener("click", () => {
     document.getElementById("modal-wrapper").classList.remove("hidden");
@@ -25,8 +25,19 @@ openBtn.addEventListener("click", () => {
 document.getElementById("close-modal-btn").addEventListener("click", () => {
     document.getElementById("modal-wrapper").classList.add("hidden");
 });
-// modal activities end from here
+//Records modal activities end from here
 
+// Account modal activities activities start from here
+const accountModalOpen = document.getElementById("open_account_modal");
+const showModal = document.getElementById("account_modal_part");
+const closeModal = document.getElementById("close_modal");
+accountModalOpen.addEventListener("click", ()=>{
+    showModal.classList.remove("hidden");
+})
+closeModal.addEventListener("click", ()=>{
+    showModal.classList.add("hidden");
+})
+// Account modal activities activities end from here
 
 // charts section activities starts from here
 // dashboard chart section start from here

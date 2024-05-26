@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home-page~Dashboard</title>
+
+    <!-- bootstrap stylesheet link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- tailwind css cdn link -->
+    <link rel="stylesheet" href="css/output.css">
+    <!-- raw css link -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome icon cdn link -->
+    <script src="https://kit.fontawesome.com/cc76e3cc3d.js" crossorigin="anonymous"></script>
+    <!-- chart cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  </head>
+  <body>
+    <header>
+        <!-- menubar section design start from here-->
+        <nav class="z-50 fixed bg-white w-full top-0 font-serif">
+            <div class="navBar md:flex justify-between px-5 items-center py-4 shadow-sm">
+                <div class="px-3 flex justify-between items-center" id="html5">
+                    <!-- logo design part start -->
+                    <div>
+                        <a href="index.html" class="flex items-center space-x-3 capitalize">
+                            <img class="w-12" src="image/header-wallet.png" alt="header-logo-wallet"> 
+                            <span class="text-xl text-gray-600">Wallet Master</span>
+                        </a>
+                    </div>
+                    <!-- logo design part end -->
+                    <!-- three dot bar and cross button design start for mobile device-->
+                    <div class="md:hidden">
+                        <button><i class="fa-solid fa-bars bars  text-3xl font-serif" id="bars"></i></button>
+                        <button><i class="fa-solid fa-xmark xMark text-3xl font-serif d-none" id="xMark"></i></button>
+                    </div>
+                    <!-- three dot bar and cross button design end for mobile device-->
+                </div>
+                <!-- sm device menubar design start from here -->
+                <div class="menuBar absolute top-20 space-y-10 bg-white py-3 text-center d-none w-full">
+                    <!-- menu Item list start from here for small device -->
+                    <div>
+                        <ul class=" text-capitalize space-y-10 text-xl md:text-2xl">
+                            <li class="text-[#000] ease-in duration-200"><a href="index.html">dashboard</a></li>
+                            <li class=" hover:text-green-600 ease-in duration-200"><a href="account.html">Accounts</a></li>
+                            <li class=" hover:text-green-600 ease-in duration-200"><a href="records.html">Records</a></li> 
+                            <li class=" hover:text-green-600 ease-in duration-200"><a href="analytics.html">Analytics</a></li>
+                        </ul>
+                    </div>
+                    <!-- menu Item list end from here for small device -->
+                    
+                    <!-- profile section design start from here-->
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full mr-4">
+                            <img class="w-full cursor-pointer" src="image/header-user.png" alt="user-image">
+                        </div>
+                        <span class="lowercase text-sm font-[600] cursor-pointer text-dark">mr johan rohine <i  class="fa-solid fa-caret-down text-[12px] ml-1"></i></span>
+                    </div>
+                   <!-- profile section design end from here-->
+                </div>
+
+
+                <!-- sm device menubar design end from here -->
+
+                    <!-- modal body section design start from here -->
+                    <div id="modal-wrapper" class="fixed z-10 inset-0 hidden">
+                        <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
+                            <div class="flex items-center justify-between bg-white p-10 rounded w-2/3">
+                                <div>
+                                    <form action="" >
+                                        <input type="text" class="form-control form-control-lg">
+                                        <input type="text" class="form-control form-control-lg">
+
+                                    </form>
+                                </div>
+                                <button id="close-modal-btn" class="bg-red-500 rounded py-3 px-10">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- modal body section design end from here -->
+
+                <!-- lg device menubar design start from here-->
+                <div class="d-none d-md-block">
+                    <div class="container flex justify-around items-center space-x-6 text-[#00000060] font-[600] capitalize">
+                        <!-- menu Item list start from here for large device -->
+                        <div class="absolute left-[35%]">
+                            <ul class=" flex justify-between items-center space-x-10">
+                                <li class="text-dark ease-in duration-200"><a href="index.html" class="">dashboard</a></li>
+                                <li class="hover:text-green-600 ease-in duration-200"><a href="account.html">Accounts</a></li>
+                                <li class=" hover:text-green-600 ease-in duration-200"><a href="records.html">Records</a></li>
+                                <li class=" hover:text-green-600 ease-in duration-200"><a href="analytics.html">Analytics</a></li>
+                            </ul>
+                        </div>
+                        <!-- menu Item list start from here for end device -->
+                        <div>
+                            <button id="open_modal_btn" class="bg-primary text-white font-normal px-3 py-2 rounded-full">&plus; Records</button>
+                        </div>
+                        <!-- profile section design start from here-->
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full mr-4">
+                                <img class="w-full cursor-pointer" src="image/header-user.png" alt="user-image">
+                            </div>
+                            <span class="lowercase text-sm font-[600] cursor-pointer text-dark">mr johan rohine <i  class="fa-solid fa-caret-down text-[12px] ml-1"></i></span>
+                        </div>
+                      <!-- profile section design end from here -->
+                    </div>
+                </div>
+            <!-- lg device menubar end from here -->
+            </div>
+        </nav>
+        <!-- menubar section design end from here-->
+
+    </header>
+
+    <!-- main section design start from here -->
+    <main class="mt-20">
+        <!-- sidebar and card design start from here -->
+        <div class="flex space-x-0 sm:space-x-20">
+            <section class=" py-5 px-4">
+                <div class="flex md:space-x-5 space-y-5 md:space-y-0">
+                    <!-- account section design start from here-->
+                    <div class="w-80 bg-[#dbdbdc] rounded pb-16">
+        
+                        <div class="text-2xl font-bold capitalize p-5 text-[#354052]">
+                            Accounts
+                        </div>
+        
+                        <!-- add option -->
+                        <div class="w-[85%] h-10 flex items-center overflow-hidden mt-1 justify-center mx-auto">
+                            <label for="modal-button" class="py-2 px-16 rounded-full bg-[#00aa70] text-white font-[400] text-sm cursor-pointer" id="open_account_modal">
+                                &plus; Add
+                            </label>
+                        </div>
+                        <!-- search option -->
+                        <div class="w-[85%] h-10 flex items-center rounded overflow-hidden mt-5 mx-auto">
+                            <span class="py-[100%] px-4 bg-white rounded-s cursor-pointer text-[#9a9fa8]"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input type="text" class="h-full w-full rounded-e p-1 outline-none text-[#9a9fa8]" placeholder="Search">
+                        </div>
+        
+                        <!-- shorted by drop down list design start from here -->
+                        <div class="mt-10">
+                            <span class="text-sm font-[450] p-5 text-[#354052]">Short by</span>
+                            <div class="flex justify-between items-center p-3 w-[85%] h-10 border border-[#b8b8b8da] rounded text-[#b8b8b8da] select-none mt-2 mx-auto bg-white">
+                                <span class="text-sm cursor-default">default</span>
+                                <span><i class="fa-solid fa-caret-down text-[11px]"></i></span>
+                            </div>
+                        </div>
+                        <!-- shorted by drop down list design start from here -->
+                    </div>
+                    <!-- account section design end from here-->
+                </div>
+            </section>
+            <section class="mt-5">
+                <!-- cash table section design start from here -->
+                <div id="card" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+                    <!-- cash card section design start from here -->
+                    <div class="text-center shadow p-5 space-y-5">
+                        <i class="fa-solid fa-coins ring-1 p-3 rounded-full text-3xl"></i>
+                        <div class="space-y-2">
+                            <p class="font-semibold text-2xl">Cash</p>
+                            <p>BDT 15,000.00</p>
+                        </div>
+                    </div>
+                    <!-- cash card section design start from here -->
+                </div>
+                <!-- cash table section design end from here -->
+            </section>
+        </div>
+        <!-- sidebar and card design end from here -->
+
+        <!-- modal section design start from here -->
+        <div id="account_modal_part" class=" fixed top-0 w-full  min-h-screen bg-gray-500 bg-opacity-75 transition-all hidden">
+            <div class="w-[70%] left-[25%] bg-white shadow px-3 fixed top-[30vh]">
+                <div>
+                    <div class="flex justify-between items-center">
+                        <p class="font-serif text-3xl">Accounts</p>
+                        <!-- modal close btn -->
+                        <i class="fa-solid fa-xmark btn text-2xl" id="close_modal"></i>
+                    </div>
+                    <hr class="w-full">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 py-5 px-3 text-gray-600">
+                    <div class="text-center shadow py-3 space-y-5">
+                        <h1 class="text-3xl items-center"><i class="fa-solid fa-building-columns text-green-400"></i> Bank Sync</h1>
+                        <p>Connect your bank accounts and synchronize your transactions automatically</p>
+                        <button class="btn btn-primary">Add Bank</button>
+                    </div>
+                    <div class="text-center shadow py-3 space-y-5 px-3">
+                        <i class="fa-solid fa-file-export text-5xl text-green-500"></i>
+                        <h1 class="text-2xl">Bank Sync</h1>
+                        <p>Connect your bank accounts and synchronize your transactions automatically</p>
+                        <button class="btn btn-primary">Import Details</button>
+                    </div>
+                    <div class="text-center shadow py-3 space-y-5">
+                        <h1><i class="fa-solid fa-building-columns"></i> Bank Sync</h1>
+                        <p>Connect your bank accounts and synchronize your transactions automatically</p>
+                        <button class="btn btn-primary">Import Details</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- modal section design end from here -->
+    </main>
+    <!-- main section design end from here -->
+
+  <!-- bootstrap script cdn link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- raw script link -->
+  <script src="js/app.js"></script>
+</body>
+</html>
